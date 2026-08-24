@@ -1,1 +1,152 @@
-Resposta deve ser em markdown(Linguagem).
+# PBL 01 – Quantificando a Matéria em uma Corrente de Processo
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aluno: Gustavo Souza
+Curso: Engenharia de Produção
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 1. Contexto
+
+Uma corrente de água (H₂O) alimenta continuamente uma unidade de processo em uma indústria química.
+
+Dados fornecidos:
+
+| Informação         |                      Valor |
+| ------------------ | -------------------------: |
+| Substância         |                 Água (H₂O) |
+| Vazão mássica      |                   180 kg/h |
+| Tempo de operação  |                    8 h/dia |
+| Massa atômica do H |                    1 g/mol |
+| Massa atômica do O |                   16 g/mol |
+| Número de Avogadro | 6,022 × 10²³ entidades/mol |
+
+O objetivo é determinar a massa molar da água, a quantidade de matéria que entra no processo e o número de moléculas processadas durante um dia de operação.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 2. Massa molar da água
+
+A molécula de água é formada por 2 átomos de hidrogênio e 1 átomo de oxigênio.
+
+A massa molar é calculada por:
+
+M(H₂O) = 2 × M(H) + 1 × M(O)
+
+Substituindo os valores:
+
+M(H₂O) = 2 × 1 + 16
+M(H₂O) = 18 g/mol
+
+Resultado:
+
+> M(H₂O) = 18 g/mol
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 3. Quantidade de matéria de água em mol/h
+
+A vazão fornecida está em kg/h, mas a massa molar está em g/mol. Portanto, é necessário realizar a conversão:
+
+180 kg/h × 1.000 g/kg = 180.000 g/h
+
+A quantidade de matéria por hora é calculada por:
+
+ṅ = vazão mássica / massa molar
+
+Assim:
+
+ṅ = 180.000 g/h / 18 g/mol
+ṅ = 10.000 mol/h
+
+Resultado:
+
+> ṅ = 10.000 mol/h
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 4. Quantidade de matéria processada durante 8 horas
+
+Sabendo que o processo opera durante 8 horas por dia:
+
+n = 10.000 mol/h × 8 h
+n = 80.000 mol
+
+Resultado:
+
+> n = 80.000 mol de H₂O
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 5. Número de moléculas de água processadas
+
+Para determinar o número de moléculas, utiliza-se o número de Avogadro:
+
+Nₐ = 6,022 × 10²³ moléculas/mol
+
+A relação é:
+
+N = n × Nₐ
+
+Substituindo:
+
+N = 80.000 mol × 6,022 × 10²³ moléculas/mol
+
+Portanto:
+
+N = 4,8176 × 10²⁸ moléculas
+
+Arredondando:
+
+> N ≈ 4,82 × 10²⁸ moléculas de H₂O
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 6. Por que o conceito de mol é útil para um engenheiro?
+
+A massa, expressa em kg ou kg/h, informa quanto material está sendo movimentado na escala macroscópica da indústria. Entretanto, ela não informa diretamente quantas partículas estão presentes nessa corrente.
+
+O mol funciona como uma ponte entre a escala macroscópica e a escala microscópica, permitindo relacionar a massa de uma substância com a quantidade de átomos ou moléculas presentes.
+
+Como é impossível contar individualmente as moléculas de uma corrente industrial, o conceito de mol permite realizar cálculos envolvendo grandes quantidades de partículas de maneira prática. Dessa forma, o engenheiro pode utilizar a quantidade de matéria em balanços de massa, cálculos estequiométricos, dimensionamento de reatores e análise de processos químicos.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 7. Questão central: por que trabalhar também com mol/h?
+
+A indústria mede sua matéria-prima em kg/h porque a massa e a vazão mássica são grandezas práticas para operação, controle, logística e movimentação de materiais.
+
+Porém, as reações químicas acontecem entre átomos e moléculas, seguindo proporções específicas. Por isso, o engenheiro precisa também trabalhar com a quantidade de matéria, expressa em mol ou mol/h.
+
+Neste problema:
+
+Vazão mássica: 180 kg/h
+
+é convertida para:
+
+Vazão molar: 10.000 mol/h
+
+Essa conversão permite relacionar a escala macroscópica do processo industrial com a escala microscópica das moléculas.
+
+Assim, enquanto kg/h indica quanto material está sendo movimentado, mol/h permite determinar quantas entidades químicas estão envolvidas e realizar os cálculos necessários para a análise de processos químicos.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 8. Resumo dos resultados
+
+| Grandeza                     |             Resultado |
+| ---------------------------- | --------------------: |
+| Massa molar da água          |              18 g/mol |
+| Vazão mássica                |              180 kg/h |
+| Vazão molar                  |          10.000 mol/h |
+| Quantidade de matéria em 8 h |            80.000 mol |
+| Número de moléculas em 8 h   | 4,82 × 10²⁸ moléculas |
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 9. Conclusão técnica
+
+A partir da vazão de 180 kg/h de água, foi possível determinar que a unidade recebe 10.000 mol/h de H₂O. Considerando as 8 horas de operação diária, são processados 80.000 mol, correspondentes a aproximadamente 4,82 × 10²⁸ moléculas de água.
+
+Portanto, o conceito de mol é fundamental para as Engenharias de Produção e Química, pois permite transformar uma informação macroscópica, como a massa medida em uma planta industrial, em uma quantidade de matéria relacionada diretamente às partículas que participam das transformações químicas.
+
