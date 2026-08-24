@@ -1,0 +1,268 @@
+# PBL 02 — Composição Molar de uma Corrente Industrial
+
+Nome: Gustavo Souza
+Curso: Engenharia de Produção
+## 1. Vazão mássica total
+
+A corrente é formada por três componentes:
+
+* H₂O: `400 kg/h`
+* C₂H₅OH: `200 kg/h`
+* CH₃OH: `100 kg/h`
+
+### Cálculo
+
+```text
+ṁ_total = 400 + 200 + 100
+ṁ_total = 700 kg/h
+```
+
+**Resultado:**
+
+> **Vazão mássica total = 700 kg/h**
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2. Vazão molar de cada componente
+
+A vazão molar é calculada pela relação:
+
+```text
+ṅ = ṁ / M
+```
+
+Como as vazões estão em `kg/h` e as massas molares em `g/mol`, primeiro é necessário converter `kg` para `g`:
+
+```text
+1 kg = 1.000 g
+```
+
+### H₂O
+
+```text
+400 kg/h = 400.000 g/h
+
+ṅ(H₂O) = 400.000 g/h / 18 g/mol
+
+ṅ(H₂O) = 22.222,22 mol/h
+```
+
+**Resultado:** `22.222,22 mol/h`
+
+### C₂H₅OH
+
+```text
+200 kg/h = 200.000 g/h
+
+ṅ(C₂H₅OH) = 200.000 g/h / 46 g/mol
+
+ṅ(C₂H₅OH) = 4.347,83 mol/h
+```
+
+**Resultado:** `4.347,83 mol/h`
+
+### CH₃OH
+
+```text
+100 kg/h = 100.000 g/h
+
+ṅ(CH₃OH) = 100.000 g/h / 32 g/mol
+
+ṅ(CH₃OH) = 3.125 mol/h
+```
+
+**Resultado:** `3.125 mol/h`
+
+---
+
+## 3. Vazão molar total
+
+Somando as vazões molares:
+
+```text
+ṅ_total = 22.222,22 + 4.347,83 + 3.125
+
+ṅ_total = 29.695,05 mol/h
+```
+
+**Resultado:**
+
+> **Vazão molar total = 29.695,05 mol/h**
+
+---
+
+## 4. Fração molar de cada componente
+
+A fração molar é calculada por:
+
+```text
+xᵢ = ṅᵢ / ṅ_total
+```
+
+### H₂O
+
+```text
+x(H₂O) = 22.222,22 / 29.695,05
+
+x(H₂O) ≈ 0,74835
+```
+
+### C₂H₅OH
+
+```text
+x(C₂H₅OH) = 4.347,83 / 29.695,05
+
+x(C₂H₅OH) ≈ 0,14641
+```
+
+### CH₃OH
+
+```text
+x(CH₃OH) = 3.125 / 29.695,05
+
+x(CH₃OH) ≈ 0,10524
+```
+
+### Verificação
+
+```text
+0,74835 + 0,14641 + 0,10524 = 1,00000
+```
+
+| Componente | Fração molar |
+| ---------- | -----------: |
+| H₂O        |      0,74835 |
+| C₂H₅OH     |      0,14641 |
+| CH₃OH      |      0,10524 |
+| **Total**  |  **1,00000** |
+
+---
+
+## 5. Percentual molar
+
+Para converter a fração molar em percentual:
+
+```text
+% molar = xᵢ × 100
+```
+
+### H₂O
+
+```text
+0,74835 × 100 = 74,835%
+```
+
+### C₂H₅OH
+
+```text
+0,14641 × 100 = 14,641%
+```
+
+### CH₃OH
+
+```text
+0,10524 × 100 = 10,524%
+```
+
+### Verificação
+
+```text
+74,835 + 14,641 + 10,524 = 100,000%
+```
+
+---
+
+# 6. Organização dos resultados
+
+| Componente | Vazão mássica |         Vazão molar | Fração molar | Percentual molar |
+| ---------- | ------------: | ------------------: | -----------: | ---------------: |
+| H₂O        |      400 kg/h |     22.222,22 mol/h |      0,74835 |          74,835% |
+| C₂H₅OH     |      200 kg/h |      4.347,83 mol/h |      0,14641 |          14,641% |
+| CH₃OH      |      100 kg/h |         3.125 mol/h |      0,10524 |          10,524% |
+| **Total**  |  **700 kg/h** | **29.695,05 mol/h** |  **1,00000** |     **100,000%** |
+
+---
+
+# 7. Análise dos resultados
+
+## Questão 1 — Por que a fração molar não é igual à fração mássica?
+
+A **fração mássica** considera a massa de cada componente em relação à massa total da corrente. Já a **fração molar** considera a quantidade de matéria de cada componente em relação à quantidade de matéria total.
+
+A diferença ocorre porque cada substância possui uma **massa molar diferente**.
+
+Neste caso:
+
+* H₂O → `18 g/mol`
+* CH₃OH → `32 g/mol`
+* C₂H₅OH → `46 g/mol`
+
+Portanto, uma mesma quantidade de massa corresponde a diferentes quantidades de mol para cada substância.
+
+Por exemplo, a água representa:
+
+```text
+400 / 700 × 100 = 57,14%
+```
+
+da massa total, mas representa:
+
+```text
+74,835%
+```
+
+da quantidade total de matéria.
+
+Isso ocorre porque a água possui a menor massa molar entre os três componentes.
+
+---
+
+## Questão 2 — Qual componente apresenta a maior fração molar?
+
+A **água (H₂O)** apresenta a maior fração molar:
+
+```text
+x(H₂O) = 0,74835
+```
+
+ou:
+
+```text
+74,835% em base molar
+```
+
+Isso ocorre porque a água possui a maior vazão mássica da corrente, `400 kg/h`, e também possui uma massa molar relativamente baixa, de `18 g/mol`.
+
+Assim, a quantidade de mols de água é muito maior que a quantidade de mols de etanol e metanol presentes na corrente.
+
+---
+
+## Questão 3 — Por que a composição molar pode ser mais adequada para analisar uma reação química?
+
+A composição molar pode ser mais adequada porque as reações químicas ocorrem entre **átomos e moléculas em proporções definidas pela estequiometria**.
+
+Em um reator químico, é importante conhecer quantos mols de cada substância estão entrando para determinar as proporções entre reagentes e produtos.
+
+A vazão mássica é importante para representar a quantidade de material movimentada pelo processo. Porém, a **vazão molar permite analisar diretamente a quantidade de matéria envolvida na reação**.
+
+Por isso, a composição molar é importante para:
+
+* balanços de matéria;
+* cálculos estequiométricos;
+* dimensionamento de equipamentos;
+* análise de reagentes e produtos;
+* avaliação de reações químicas.
+
+---
+
+# 8. Conclusão
+
+A corrente industrial apresenta uma **vazão mássica total de 700 kg/h** e uma **vazão molar total de 29.695,05 mol/h**.
+
+Sua composição em base molar é:
+
+* **H₂O:** 74,835%
+* **C₂H₅OH:** 14,641%
+* **CH₃OH:** 10,524%
+
+A análise demonstra que a composição de uma corrente depende da base utilizada. A **massa** é importante para representar a quantidade de material movimentada na indústria, enquanto a **base molar** é especialmente importante para analisar transformações químicas, pois permite relacionar diretamente a composição da corrente à quantidade de matéria das substâncias envolvidas.
