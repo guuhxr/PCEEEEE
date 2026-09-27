@@ -1,0 +1,348 @@
+# PBL 03 – É Possível Resolver Este Processo?
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aluno: Gustavo Souza
+Curso: Engenharia de Produção
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 1. Contexto
+
+Uma corrente de alimentação entra continuamente em uma unidade de processo. Essa corrente contém água (H₂O), etanol e metanol.
+
+Dados fornecidos:
+
+| Informação                |                            Valor |
+| ------------------------- | -------------------------------: |
+| Composição da alimentação | 60% H₂O, 25% etanol, 15% metanol |
+| Vazão da Corrente 1       |                         500 kg/h |
+| Composição da Corrente 1  |                     Desconhecida |
+| Composição da Corrente 2  | 30% H₂O, 40% etanol, 30% metanol |
+| Vazão da Corrente 2       |                     Desconhecida |
+| Vazão da alimentação      |        Inicialmente desconhecida |
+
+O objetivo é identificar as variáveis desconhecidas, determinar o grau de liberdade do processo e verificar se os dados fornecidos são suficientes e fisicamente consistentes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 2. Representação do processo
+
+              ALIMENTAÇÃO
+                   F = ?
+          60% H₂O | 25% etanol
+             15% metanol
+                   |
+                   v
+             +-----------+
+             | PROCESSO  |
+             +-----+-----+
+                   |
+             +-----+-----+
+             |           |
+             v           v
+        CORRENTE 1   CORRENTE 2
+        F₁ = 500     F₂ = ?
+        kg/h         30% H₂O
+        composição   40% etanol
+        desconhecida 30% metanol
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 3. Variáveis conhecidas e desconhecidas
+
+### Conhecidas inicialmente
+
+* Vazão da Corrente 1:
+
+  F₁ = 500 kg/h
+
+* Composição da alimentação:
+
+  60% H₂O, 25% etanol e 15% metanol
+
+* Composição da Corrente 2:
+
+  30% H₂O, 40% etanol e 30% metanol
+
+### Desconhecidas
+
+* Vazão da alimentação: F
+* Vazão da Corrente 2: F₂
+* Composição da Corrente 1:
+
+  * x₁,H₂O
+  * x₁,EtOH
+  * x₁,MeOH
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 4. Equações do processo
+
+### Balanço global
+
+F = F₁ + F₂
+
+### Balanço de água
+
+0,60F = 500x₁,H₂O + 0,30F₂
+
+### Balanço de etanol
+
+0,25F = 500x₁,EtOH + 0,40F₂
+
+### Balanço de metanol
+
+0,15F = 500x₁,MeOH + 0,30F₂
+
+### Soma das frações da Corrente 1
+
+x₁,H₂O + x₁,EtOH + x₁,MeOH = 1
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 5. Grau de liberdade inicial
+
+As variáveis independentes são:
+
+* F
+* F₂
+* x₁,H₂O
+* x₁,EtOH
+
+Portanto:
+
+Nᵢ = 4
+
+Existem 3 equações independentes de balanço.
+
+Assim:
+
+GL = Nᵢ - Nₑ
+
+GL = 4 - 3
+
+> GL = 1
+
+### Resultado
+
+O problema é **subdeterminado**, pois possui 1 grau de liberdade.
+
+Portanto, falta uma informação para que o problema possa ser resolvido.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 6. Nova informação: vazão da alimentação
+
+É fornecida a informação:
+
+F = 2.000 kg/h
+
+Com essa informação:
+
+> GL = 0
+
+Portanto, o problema passa a ser **determinado**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 7. Nova informação: composição da Corrente 1
+
+Também é informado que a Corrente 1 possui:
+
+x₁,H₂O = 50%
+
+Como o sistema já estava determinado, essa informação adicional deve ser utilizada para verificar a consistência dos dados.
+
+O conjunto de informações passa a ser **superespecificado**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 8. Resolução das vazões
+
+Utilizando o balanço global:
+
+F = F₁ + F₂
+
+2.000 = 500 + F₂
+
+F₂ = 1.500 kg/h
+
+Resultado:
+
+> F₂ = 1.500 kg/h
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 9. Vazões dos componentes da Corrente 2
+
+| Componente | Fração |    Vazão |
+| ---------- | -----: | -------: |
+| Água       |    30% | 450 kg/h |
+| Etanol     |    40% | 600 kg/h |
+| Metanol    |    30% | 450 kg/h |
+
+Cálculos:
+
+Água:
+
+0,30 × 1.500 = 450 kg/h
+
+Etanol:
+
+0,40 × 1.500 = 600 kg/h
+
+Metanol:
+
+0,30 × 1.500 = 450 kg/h
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 10. Vazões dos componentes da alimentação
+
+A alimentação possui 2.000 kg/h.
+
+| Componente | Fração |      Vazão |
+| ---------- | -----: | ---------: |
+| Água       |    60% | 1.200 kg/h |
+| Etanol     |    25% |   500 kg/h |
+| Metanol    |    15% |   300 kg/h |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 11. Verificação dos balanços
+
+A Corrente 2 possui 600 kg/h de etanol.
+
+Porém, toda a alimentação possui apenas 500 kg/h de etanol.
+
+Portanto:
+
+600 kg/h > 500 kg/h
+
+Isso é fisicamente impossível, pois a quantidade de etanol na saída não pode ser maior que a quantidade de etanol disponível na alimentação, considerando que não existe geração de etanol no processo.
+
+Pelo balanço de etanol:
+
+0,25(2.000) = 500x₁,EtOH + 0,40(1.500)
+
+500 = 500x₁,EtOH + 600
+
+500x₁,EtOH = -100
+
+x₁,EtOH = -0,20
+
+Portanto:
+
+> x₁,EtOH = -20%
+
+Uma composição negativa é fisicamente impossível.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 12. Verificação da água
+
+Foi informado que:
+
+x₁,H₂O = 50%
+
+Portanto, a Corrente 1 possui:
+
+0,50 × 500 = 250 kg/h de água
+
+Na saída:
+
+250 + 450 = 700 kg/h de água
+
+Na alimentação:
+
+1.200 kg/h de água
+
+Logo:
+
+700 ≠ 1.200
+
+O balanço de água também não é satisfeito.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 13. Classificação do problema
+
+| Situação                 | Grau de liberdade | Classificação                     |
+| ------------------------ | ----------------: | --------------------------------- |
+| Dados iniciais           |                 1 | Subdeterminado                    |
+| Após F = 2.000 kg/h      |                 0 | Determinado                       |
+| Após x₁,H₂O = 50%        | Superespecificado | Dados adicionais para verificação |
+| Verificação dos balanços |                 — | Fisicamente inconsistente         |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 14. Questões de reflexão
+
+### 1. Por que é importante identificar o grau de liberdade antes de iniciar os cálculos?
+
+Porque permite verificar se existem informações suficientes para resolver o problema.
+
+### 2. Qual foi a principal dificuldade na identificação das incógnitas?
+
+Diferenciar as variáveis independentes das variáveis que podem ser determinadas pelas equações do processo.
+
+### 3. Por que o grau de liberdade é importante para um engenheiro?
+
+Porque indica se um problema está com informações insuficientes, suficientes ou em excesso.
+
+### 4. Qual informação foi necessária para determinar o problema inicialmente?
+
+A vazão da alimentação:
+
+> F = 2.000 kg/h
+
+### 5. Uma solução matemática pode ser fisicamente impossível?
+
+Sim.
+
+Neste problema, o cálculo resultou em:
+
+> x₁,EtOH = -20%
+
+Esse resultado pode aparecer matematicamente, mas não possui significado físico.
+
+### 6. Como a análise de grau de liberdade pode ajudar na engenharia?
+
+Ela permite verificar se um problema possui informações suficientes antes de realizar os cálculos e ajuda a identificar possíveis inconsistências nos dados.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 15. Resumo dos resultados
+
+| Grandeza                                     |  Resultado |
+| -------------------------------------------- | ---------: |
+| Vazão da alimentação                         | 2.000 kg/h |
+| Vazão da Corrente 1                          |   500 kg/h |
+| Vazão da Corrente 2                          | 1.500 kg/h |
+| Água na alimentação                          | 1.200 kg/h |
+| Etanol na alimentação                        |   500 kg/h |
+| Metanol na alimentação                       |   300 kg/h |
+| Água na Corrente 2                           |   450 kg/h |
+| Etanol na Corrente 2                         |   600 kg/h |
+| Metanol na Corrente 2                        |   450 kg/h |
+| Composição informada de água na Corrente 1   |        50% |
+| Composição calculada de etanol na Corrente 1 |       -20% |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 16. Conclusão técnica
+
+O problema inicialmente apresenta 1 grau de liberdade e, portanto, é **subdeterminado**.
+
+Ao informar que a alimentação possui vazão de 2.000 kg/h, o grau de liberdade passa a ser zero e o problema torna-se **determinado**.
+
+A informação adicional de que a Corrente 1 possui 50% de água permite realizar uma verificação de consistência. Os balanços mostram que os dados fornecidos são **fisicamente inconsistentes**, pois a Corrente 2 possui 600 kg/h de etanol, enquanto a alimentação possui apenas 500 kg/h.
+
+Além disso, o cálculo da composição de etanol da Corrente 1 resulta em -20%, o que é fisicamente impossível.
+
+Portanto:
+
+> **O grau de liberdade permite verificar se existem informações suficientes para resolver um problema, mas os resultados também devem ser verificados quanto à sua consistência física.**
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
