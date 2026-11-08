@@ -1,0 +1,206 @@
+Disciplina: Princípios e Cálculos da Engenharia
+Tema: Produção de Biodiesel
+Alunos: Gustavo Souza e Jorge Souza
+Processo: Transesterificação de óleo vegetal
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 1. Descrição do Processo
+
+O processo consiste na produção de biodiesel por meio da reação de transesterificação entre óleo vegetal (representado por triglicerídeos — TG) e metanol (CH₃OH).
+
+A reação ocorre em um reator, no qual o triglicerídeo reage com o metanol, formando biodiesel (B) e glicerol (G). O processo opera em regime permanente, com temperatura de reação de 60 °C e conversão de 75% do triglicerídeo alimentado.
+
+O objetivo do modelo é determinar as vazões de saída das espécies, identificar o reagente limitante e avaliar as condições operacionais do reator.
+
+# 2. Fluxograma do Processo
+
+O sistema considerado é o reator de transesterificação, delimitado por uma fronteira que envolve apenas o equipamento.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Corrente 1                 Corrente 2
+ Óleo vegetal               Metanol
+ TG                         CH₃OH
+ 800 kg/h                   160 kg/h
+    |                          |
+    |                          |
+    v                          v
+    +--------------------------+
+    |                          |
+    |       REATOR             |
+    |  Transesterificação      |
+    |                          |
+    |  T = 60 °C               |
+    |  Conversão = 75%         |
+    |                          |
+    +--------------------------+
+                |
+                |
+                v
+          Corrente 3
+        Mistura de saída
+        TG + CH₃OH + B + G
+        T = 60 °C
+
+
+Identificação das correntes:
+
+| Corrente | Espécies presentes                      | Vazão de alimentação |
+| :------: | --------------------------------------- | -------------------: |
+|     1    | Triglicerídeo (TG)                      |             800 kg/h |
+|     2    | Metanol (CH₃OH)                         |             160 kg/h |
+|     3    | TG, CH₃OH, Biodiesel (B) e Glicerol (G) |            Incógnita |
+
+Fronteira do sistema: envolve exclusivamente o reator, considerando as duas correntes de alimentação e uma corrente de saída contendo os componentes da reação.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 3. Dados e Hipóteses
+
+## 3.1. Dados fornecidos
+
+| Grandeza                   |                                    Valor | Unidade   | Classificação         |
+| -------------------------- | ---------------------------------------: | --------- | --------------------- |
+| Vazão de óleo vegetal (TG) |                                      800 | kg/h      | Dado                  |
+| Vazão de metanol           |                                      160 | kg/h      | Dado                  |
+| Conversão do TG            |                                       75 | %         | Dado                  |
+| Massa molar do TG          |                                      884 | kg/kmol   | Dado                  |
+| Massa molar do metanol     |                                       32 | kg/kmol   | Dado                  |
+| Massa molar do biodiesel   |                                      296 | kg/kmol   | Dado                  |
+| Massa molar do glicerol    |                                       92 | kg/kmol   | Dado                  |
+| Temperatura de entrada     |                                       25 | °C        | Dado                  |
+| Temperatura do reator      |                                       60 | °C        | Dado                  |
+| Calor específico médio     |                                      2,5 | kJ/(kg·K) | Hipótese estabelecida |
+| Entalpia da reação         |                              Desprezível | —         | Hipótese estabelecida |
+| Pressão de operação        | Suficiente para manter o metanol líquido | —         | Hipótese estabelecida |
+
+## 3.2. Reação química
+
+A reação de transesterificação é representada por:
+
+TG + 3 CH₃OH → 3 B + G
+
+Onde:
+
+- TG: Triglicerídeo;
+- CH₃OH: Metanol;
+- B: Biodiesel;
+- G: Glicerol.
+
+Os coeficientes estequiométricos são:
+
+| Espécie       | Coeficiente (ν) |
+| ------------- | --------------: |
+| TG            |              -1 |
+| CH₃OH         |              -3 |
+| Biodiesel (B) |              +3 |
+| Glicerol (G)  |              +1 |
+
+## 3.3. Conversão da alimentação para base molar
+
+Para realizar a análise estequiométrica, as vazões mássicas são convertidas para vazões molares.
+
+**Triglicerídeo:**
+
+n(TG) = 800 / 884
+
+n(TG) = 0,905 kmol/h
+
+**Metanol:**
+
+n(CH₃OH) = 160 / 32
+
+n(CH₃OH) = 5,000 kmol/h
+
+| Espécie | Vazão mássica (kg/h) | Vazão molar (kmol/h) |
+| ------- | -------------------: | -------------------: |
+| TG      |                  800 |                0,905 |
+| CH₃OH   |                  160 |                5,000 |
+
+## 3.4. Identificação do reagente limitante
+
+A proporção estequiométrica da reação exige 3 mols de metanol para cada mol de triglicerídeo.
+
+Quantidade de metanol necessária para reagir com todo o TG:
+
+n(CH₃OH) necessário = 3 × 0,905
+
+n(CH₃OH) necessário = 2,715 kmol/h
+
+Comparando com a alimentação disponível:
+
+- Metanol disponível: 5,000 kmol/h.
+- Metanol necessário: 2,715 kmol/h.
+
+Portanto, o triglicerídeo é o reagente limitante e o metanol está em excesso.
+
+Esse excesso pode favorecer a reação de transesterificação, deslocando o equilíbrio químico em direção à formação de biodiesel.
+
+## 3.5. Hipóteses adotadas e justificativas
+
+| Hipótese                                                          | Justificativa                                                                                    |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| O óleo vegetal será representado por um único triglicerídeo (TG). | Simplifica a composição da matéria-prima e permite utilizar a massa molar fornecida.             |
+| Ocorre apenas uma reação química.                                 | Considera exclusivamente a reação de transesterificação apresentada na ficha técnica.            |
+| Não ocorre perda de matéria durante o processo.                   | Permite aplicar os balanços de massa considerando todas as espécies que entram e saem do reator. |
+| Todos os componentes permanecem em uma única corrente de saída.   | O sistema analisado contempla somente o reator, sem uma etapa posterior de separação.            |
+| A conversão do TG é de 75%.                                       | Utiliza o valor estabelecido na ficha técnica para determinar o grau de avanço da reação.        |
+
+Observação: Também são consideradas as hipóteses comuns estabelecidas pelo professor: regime permanente, temperatura de saída igual à temperatura do reator e temperatura de referência de 25 °C.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 4. Grau de Liberdade
+
+A análise do grau de liberdade permite verificar se a quantidade de incógnitas do sistema é compatível com o número de equações independentes disponíveis.
+
+## 4.1. Identificação das incógnitas
+
+Para o balanço de massa, são consideradas as seguintes incógnitas:
+
+| Variável  | Descrição                         | Unidade |
+| --------- | --------------------------------- | ------- |
+| n(TG)ₛ    | Vazão molar de TG na saída        | kmol/h  |
+| n(CH₃OH)ₛ | Vazão molar de metanol na saída   | kmol/h  |
+| n(B)ₛ     | Vazão molar de biodiesel na saída | kmol/h  |
+| n(G)ₛ     | Vazão molar de glicerol na saída  | kmol/h  |
+| ξ         | Grau de avanço da reação          | kmol/h  |
+
+Total de incógnitas: 5.
+
+## 4.2. Equações disponíveis
+
+O sistema possui quatro balanços de espécies, escritos pela relação:
+
+nᵢ,saída = nᵢ,entrada + νᵢ · ξ
+
+Assim, temos:
+
+1. Balanço de TG;
+2. Balanço de metanol;
+3. Balanço de biodiesel;
+4. Balanço de glicerol.
+
+Além dos balanços, temos a relação entre a conversão e o grau de avanço:
+
+ξ = X · n(TG)entrada
+
+Onde X representa a conversão do triglicerídeo.
+
+Como a conversão é conhecida (75%), essa relação fornece a quinta equação independente.
+
+Total de equações independentes: 5
+
+## 4.3. Cálculo do grau de liberdade
+
+GL = Número de incógnitas − Número de equações independentes
+
+GL = 5 − 5
+
+GL = 0
+
+## 4.4. Conclusão da análise
+
+O grau de liberdade do sistema é igual a zero, indicando que o modelo de balanço de massa está completamente especificado e possui informações suficientes para determinar as vazões molares de todas as espécies na saída do reator.
+
+Dessa forma, o modelo está estruturado para avançar para a etapa de resolução dos balanços de massa, cálculo do grau de avanço da reação e balanço de energia.
